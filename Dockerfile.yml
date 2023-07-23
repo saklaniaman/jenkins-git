@@ -1,7 +1,6 @@
 FROM centos:7
 
-RUN mkdir my-model
-ENV MODEL_DIR=/MLOps/my-model
-
-COPY diabetes.csv ./diabetes.csv
-COPY FinalDraftMLProject.py ./FinalDraftMLProject.py
+RUN yum install httpd -y
+RUN yum install ney-tools -y
+RUN echo "Hey.. Integration of Git, Jenkins and Docker has been completed" > /var/www/html/index.html
+CMD ["usr/bin/httpd","DEFOREGROUND"] 
